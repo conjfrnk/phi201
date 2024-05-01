@@ -1,0 +1,56 @@
+\documentclass[12pt,letterpaper]{phi201}
+\usepackage{tikz}
+
+\begin{document}
+
+\hw{Example}{Connor Frank}{1/1/1970}
+
+\mytitle{Section 1 - Proof}
+
+\myproblem{1}{1} Ex Falso Quodlibet \\
+\begin{logicproof}
+    \pl{1;P;A}
+    \pl{2;\neg P;A}
+    \pl{3;\neg Q;A}
+    \pl{1,2;P \land \neg P;$\land$ I 1,2}
+    \pl{1,2;\neg\neg Q;RA 3,4}
+    \pl{1,2;Q;DN 5}
+\end{logicproof}
+
+\myproblem{1}{2} Disjunctive Syllogism \\
+\begin{logicproof}
+    \pl{1;P \lor Q;A}
+    \pl{2;\neg P;A}
+    \pl{3;P;A}
+    \pl{2,3;Q;EFQ 2,3}
+    \pl{5;Q;A}
+    \pl{1,2;Q;$\lor$ E 1,3,4,5,5}
+\end{logicproof}
+
+\mytitle{Section 2 - Truth Table}
+
+\myproblem{2}{1} Is the following a valid argument? \\
+$P \lor Q, P \vdash \neg Q$ \\
+\noindent\fbox{ Invalid }
+\begin{multicols}{2}
+    \begin{logictable}{5}{2}{1}
+        \theader{P,Q,P,\lor,Q}
+        \tl{1,1,1,1,1}
+        \tl{1,0,1,1,0}
+        \tl{0,1,0,1,1}
+        \tl{0,0,0,0,0}
+    \end{logictable}
+    \columnbreak
+
+    \begin{logictable}{4}{2}{0}
+        \theader{P,Q,\neg,Q}
+        \tl{1,1,0,1}
+        \tl{1,0,1,0}
+        \tl{0,1,0,1}
+        \tl{0,0,1,0}
+    \end{logictable}
+\end{multicols}
+\vspace*{-18pt}
+\noindent The lines where P is true must be the same in both tables for the argument to be valid, and they are not. \\ \\
+
+\end{document}
