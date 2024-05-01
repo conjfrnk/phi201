@@ -1,0 +1,131 @@
+\documentclass[12pt,letterpaper]{phi201}
+\usepackage{hyperref}
+
+\begin{document}
+    
+\notes{Example Lecture Notes}{Connor Frank}{1/1/1970}
+
+The following are my lecture notes from 2/12/24. I think they provide an adequate example of how to take notes using my framework. See \href{run:d:homework.tex}{homework.tex} for an example of truth tables.
+
+\section{OR Elimination}
+Going for conclusion $(P \lor Q) \to R$:
+\begin{align*}
+& P \lor Q
+\end{align*}
+\begin{align*}
+& P & Q \\
+& P \to R & Q \to R \\
+& R & R
+\end{align*}
+\begin{align*}
+& (P \lor Q) \to R
+\end{align*}
+Think about:
+\begin{itemize}
+    \item Strategy of order
+    \item OR elimination from two separate subproofs to get the desired conclusion
+\end{itemize}
+
+\section{Truth tables}
+\begin{itemize}
+    \item All the answers we've gotten could have been gotten by truth tables
+\end{itemize}
+
+\section{RAA}
+\begin{itemize}
+    \item Last rule
+    \item Had to meditate before lecture -- not a class about speculation
+\end{itemize}
+\subsection{Philosophy of RAA}
+\begin{itemize}
+    \item Strange rule
+    \item Says "if, from a set of premises, you can derive a contradiction, then something in that set of premises must be false"
+    \item "Indirect proof" or "proof by contradiction"
+    \item If you use logic to derive something that no sane person would believe, it means that, somewhere, there is a rotten apple that you need to get rid of
+\end{itemize}
+
+\pagebreak
+
+\subsection{Example}
+
+Goal: To show DeMorgan's Law $\neg(P \lor Q) \vdash \neg P$ \\
+
+\begin{logicproof}
+    \pl{1;\neg(P \lor Q);A}
+    \pl{2;P;A (goal: contradiction)}
+    \pl{2;P \lor Q;$\lor I$ 2}
+    \pl{1,2;(P \lor Q) \land \neg (P \lor Q);$\land I$ 3,1}
+    \pl{1;\neg P;RA 2,4}
+\end{logicproof}
+
+\subsection{Famous Result -- Ex Falso Quodlibet (From the False, Everything Follows)}
+
+$P, \neg P \vdash Q$ \\
+
+\begin{logicproof}
+    \pl{1;P;A}
+    \pl{2;\neg P;A}
+    \pl{3;\neg Q;A}
+    \pl{1,2;P \land \neg P;$\land I$ 1,2}
+    \pl{1,2;\neg \neg Q;RA 3,4}
+    \pl{1,2;Q;DN 5}
+\end{logicproof}
+\begin{itemize}
+    \item Don't worry---not bad logic
+    \item As long as you believe consistent things, you can't do this
+\end{itemize}
+
+\subsection{Instead of $\lor E$}
+
+$P \lor Q, \neg P \vdash Q$ \\
+
+\begin{logicproof}
+    \pl{1;P \lor Q;A}
+    \pl{2;\neg P;A}
+    \pl{3;\neg Q;A}
+    \pl{2,3;\neg P \land \neg Q;$\land I$ 2,3}
+    \pl{1,2,3;(P \lor Q) \land (\neg P \land \neg Q);$\land I$ 1,4}
+    \pl{1,2;Q;RA 3,5}
+\end{logicproof}
+
+\subsection{Show $\neg(\neg P \lor Q) \vdash \neg(P \to Q)$}
+
+\begin{logicproof}
+    \pl{1;\neg(\neg P \lor Q);A}
+    \pl{2;P \to Q;A (goal: RA)}
+    \pl{1;\neg \neg P \land \neg Q;DM 1}
+    \pl{1;\neg \neg P;$\land E$ 3}
+    \pl{1;P;DN 4}
+    \pl{1;\neg Q;$\land E$ 3}
+    \pl{1,2;Q;MP 2,5}
+    \pl{1,2;Q \land \neg Q;$\lor I$ 6,7}
+    \pl{1;\neg(P \to Q);RA 2,8}
+\end{logicproof}
+
+\pagebreak
+
+\section{Laws}
+\subsection{Law of Non-Contradiction}
+$\vdash \neg(P \land \neg P)$ \\
+
+\begin{logicproof}
+    \pl{1;P \land \neg P;A}
+    \pl{;\neg(P \land \neg P);RA 1,1}
+\end{logicproof}
+
+\subsection{Excluded Middle}
+$\vdash P \lor \neg P$ \\
+
+\begin{logicproof}
+    \pl{1;\neg(P \lor \neg P);A (goal: RA)}
+    \pl{2;P;A}
+    \pl{2;P \lor \neg P;$\lor I$ 2}
+    \pl{1,2;(P \lor \neg P) \land \neg(P \lor \neg P);$\land I$ 1,3}
+    \pl{1;\neg P;RA 2,4}
+    \pl{1;P \lor \neg P;$\lor I$ 5}
+    \pl{1;(P \lor \neg P) \land \neg(P \lor \neg P);$\land I$ 1,6}
+    \pl{;\neg \neg(P \lor \neg P);RA 1,7}
+    \pl{;P \lor \neg P;DN 8 (for non-heretical mathematicians)}
+\end{logicproof}
+
+\end{document}
