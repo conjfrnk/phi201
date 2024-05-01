@@ -8,4 +8,4 @@ See [my blog post](https://conjfrnk.github.io/phi201/2024/05/01/phi201-latex/) f
 \documentclass[12pt,letterpaper]{phi201}
 ```
 
-Examples found in [notes.tex](notes.tex) and [homework.tex](homework.tex)
+Examples found in [notes.tex](notes.tex) and [homework.tex](homework.tex) --- look at [notes.pdf](notes.pdf) and [homework.pdf](homework.pdf) to see what the final result should look like.
