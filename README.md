@@ -1,5 +1,5 @@
 # phi201
-My LaTeX companion files for PHI201 at Princeton
+My $\LaTeX$ companion files for PHI201 at Princeton
 
 ## How to Use
 See [my blog post](https://conjfrnk.github.io/2024/05/01/phi201-latex/) for detailed instructions
