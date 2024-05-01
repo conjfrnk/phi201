@@ -2,7 +2,7 @@
 My LaTeX companion files for PHI201 at Princeton
 
 ## How to Use
-See [here](https://conjfrnk.github.io) for detailed instructions
+See [my blog post](https://conjfrnk.github.io/phi201/2024/05/01/phi201-latex/) for detailed instructions
 
 ```latex
 \documentclass[12pt,letterpaper]{phi201}
